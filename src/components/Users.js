@@ -15,11 +15,12 @@ const Users = (props) => {
     const age = props.user.dob.age;
     const dataSet ={
         name: fulName,
+        salary: salary
     }
     return (
         <div className="card">
             <div className="cover-image">
-                <button id="add-button"> <FontAwesomeIcon icon={faUser} className="add-icon" /> add user</button>
+                <button onClick={() => props.addHandler(dataSet)} id="add-button"> <FontAwesomeIcon icon={faUser} className="add-icon" /> add user</button>
             </div>
             <div className="cardImg">
                 <img src={image} alt=""/>
