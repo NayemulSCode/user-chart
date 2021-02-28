@@ -1,5 +1,7 @@
 import React from 'react';
-
+import './User.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 const Users = (props) => {
     const name = props.user.name;
     const {title, first, last} = name;
@@ -16,12 +18,15 @@ const Users = (props) => {
     }
     return (
         <div className="card">
+            <div className="cover-image">
+                <button id="add-button"> <FontAwesomeIcon icon={faUser} className="add-icon" /> add user</button>
+            </div>
             <div className="cardImg">
                 <img src={image} alt=""/>
             </div>
             <div className="cardBody">
                 <div className="info">
-                    <h1>{fulName} <span>age:{age}</span></h1>
+                    <h1 className="name">{fulName} <span className="age">age:{age}</span></h1>
                 </div>
                 <div className="contact">
                     <h5>{country},{city}</h5>
@@ -31,7 +36,7 @@ const Users = (props) => {
             </div>
             <div className="insights">
                 <div className="insights-item">
-                    <h6>{salary}/Monthly</h6>
+                    <h6>{salary}<span id="month">/Monthly</span></h6>
                     <p>Salary</p>
                 </div>
                 <div className="insights-item">
